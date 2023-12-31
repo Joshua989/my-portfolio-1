@@ -1,0 +1,31 @@
+.container-form{
+	width: 500px;
+	padding: 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+	background-color: #272829;
+}
+h4{
+	margin-bottom: 10px;
+	font-size: 24px;
+	color: white;
+}
+input{
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+textarea{
+	width: 100%;
+	padding: 10px;
+}
+#submit{
+	border: none;
+	background-color: white;
+	color: black;
+	width: 200px;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+#submit:hover{
+	background-color: #413f3f;
+}

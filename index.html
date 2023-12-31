@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="/css/my-edit.css">
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/form.css">
 
   <!-- =======================================================
   * Template Name: iPortfolio
@@ -77,7 +78,7 @@
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1>OMOLAFE JOSHUA</h1>
-      <p>I'm a <span class="typed" data-typed-items="Softwere Engineer,frontend Developer, Freelancer,Teacher"></span></p>
+      <p>I'm a <span class="typed" data-typed-items="Softwere Engineer,Frontend Developer, Freelancer,Teacher"></span></p>
     </div>
   </section><!-- End Hero -->
 
@@ -91,8 +92,7 @@
           <h2>About</h2>
           <p>
             <!--Tab to edit-->
-I'm Joshua Omolafe, a tech enthusiast and frontend software engineer. I embarked on my tech journey in 2020, starting with the C programming language. I crafted several projects with C before delving into Python, which quickly became my favorite language. I continue to utilize Python extensively, building a multitude of projects. Venturing into web development, I discovered a passion for creating visually stunning websites and web applications. For me, web development is more than a profession—it's a way of life.  
-          </p>
+            I'm Joshua Omolafe, a tech enthusiast and frontend software engineer. I embarked on my tech journey in 2020, starting with the C programming language. I crafted several projects with C before delving into Python, which quickly became my favorite language. I continue to utilize Python extensively, building a multitude of projects. As I ventured into web development, I discovered a passion for creating visually stunning websites and web applications, employing not only Python but also JavaScript to enhance the interactive and dynamic aspects of my projects. For me, web development is more than a profession—it's a way of life.          </p>
 
 </div>
 
@@ -387,30 +387,17 @@ I'm Joshua Omolafe, a tech enthusiast and frontend software engineer. I embarked
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="https://formsubmit.co/omolafejoshua25@gmail.com" method="post"  class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" >
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email"  >
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" >
-              </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10"></textarea>
-              </div>
-             
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div>
-
+            <div class="container-form">
+              <form method="post" action="" name="contact-form">
+                <h4>Contact Us</h4>
+                <input type="text" name="your-name" placeholder="Name">
+                <input type="text" name="your-number" placeholder="Number">
+                <input type="email" name="your-email" placeholder="Email">
+                <textarea name="message" rows="7" placeholder="Your Message"></textarea>
+                <input type="submit" value="Submit" id="submit">
+              </form>
+            </div>
+          
         </div>
 
       </div>
@@ -437,6 +424,19 @@ I'm Joshua Omolafe, a tech enthusiast and frontend software engineer. I embarked
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwMAdwea06643abh2t3KHXVNF0zRrorBbQIdLnHMcLl438W-PHGWLgpVe0mcV3vZ7QTRQ/exec'
+
+const form = document.forms['contact-form']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert("Thank you! your form is submitted successfully." ))
+  .then(() => { window.location.reload(); })
+  .catch(error => console.error('Error!', error.message))
+})
+  </script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
